@@ -1,5 +1,8 @@
 package ru.naumen.collection.task2;
 
+import ru.naumen.collection.task1.Ticket;
+
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -15,16 +18,19 @@ public class User {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj.getClass() == User.class)
-        {
-            User user = (User) obj;
-            return Objects.equals(this.email, user.email) && this.passwordHash == user.passwordHash && Objects.equals(user.username, this.username);
+        if (this == obj) {
+            return true;
         }
-        return false;
+        else if (obj instanceof User user){
+            return user.username.equals(this.username) && user.email.equals(this.email) && Arrays.equals(user.passwordHash, this.passwordHash);
+        }
+        else{
+            return false;
+        }
     }
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return Objects.hash(this.username, this.email, Arrays.hashCode(this.passwordHash));
     }
 }

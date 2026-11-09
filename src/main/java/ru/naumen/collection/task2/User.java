@@ -1,7 +1,5 @@
 package ru.naumen.collection.task2;
 
-import ru.naumen.collection.task1.Ticket;
-
 import java.util.Arrays;
 import java.util.Objects;
 

@@ -39,11 +39,11 @@ public class Task2
         Collection<User> bigger = collA.size() <= collB.size() ? collB : collA;
 
         Set<User> lookup = new HashSet<>(smaller);
-        Set<User> result = new HashSet<>();
+        List<User> result = new ArrayList<>();
         for(User user : bigger){
             if (lookup.contains(user))
                 result.add(user);
         }
-        return result.stream().toList();
+        return result;
     }
 }

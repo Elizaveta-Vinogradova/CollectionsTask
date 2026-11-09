@@ -45,9 +45,9 @@ public class Task1
      * Получить товары по билету
      */
 
-    private final HashMap<Ticket, Goods> ticketFoods = new HashMap<>();
+    private final HashMap<Long, Goods> ticketFoods = new HashMap<>();
 
     public Goods getGoods(Ticket ticket) {
-        return ticketFoods.getOrDefault(ticket, Goods.EMPTY);
+        return ticketFoods.getOrDefault(ticket.id, Goods.EMPTY);
     }
 }
